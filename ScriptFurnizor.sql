@@ -1,0 +1,12 @@
+create table furnizor(
+  id number(3) primary key,
+  nume varchar(40),
+  contBancar varchar(40),
+  adresaFurnizor number(3)references adresa(id),
+  nrTel number(12),
+  email varchar(40)
+  
+  constraint mail check (email like '%_@__%.__%')
+)
+
+create sequence incrementFurnizor start with 1;

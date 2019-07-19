@@ -1,0 +1,14 @@
+create or replace package body Inregistrari is
+
+function adauga(p_produs number, p_cantitate number, p_pret number, p_factura number) return number is
+    --adauga inregistrari in tabela Inregistrare si returneaza id-ul generat
+    v_id number(3) := incrementInregistrare.Nextval;
+begin
+     insert into inregistrare(id, produs, cantitate, pret, factura)
+      values(v_id, p_produs, p_cantitate, p_pret, p_factura);
+      
+     return v_id;
+end adauga; 
+
+end Inregistrari;
+/

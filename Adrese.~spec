@@ -1,0 +1,14 @@
+create or replace package adrese is
+-- Copyright (C) 2019 CRIsoft
+
+function getRevision return varchar2;
+-- Return revision number from source control system
+
+procedure add_tip_type_standard(p_cod varchar2, p_denumire varchar2);
+  -- definire tip type crosweb
+  
+procedure add_type_standard(p_cod varchar2, p_descriere varchar2, p_tip_type_st varchar2, p_link varchar2, p_exemplu varchar2);
+  -- definire type crosweb  
+  
+end def_types_standard;
+/

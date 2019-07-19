@@ -1,0 +1,35 @@
+create or replace package body StocProduse is
+
+procedure adauga(p_prod number, p_cant number) is
+    --adauga produse in tabela Stoc sau creste cantitatea de produs in cazul unui produs existent deja
+    l_exst number(1);
+begin
+    select case
+           when exists (select 1 from stoc where produs = p_prod) then
+            1
+           else
+            0
+           end
+      into l_exst
+      from dual;
+  
+     if l_exst = 1 then
+        update stoc set cantitate = cantitate + p_cant where produs = p_prod;
+     else
+        insert into stoc (produs, cantitate)
+        values (p_prod, p_cant);
+     end if;
+ end adauga;
+
+
+
+procedure updateCantitate(p_id number, p_pretNou number) is
+    --modifica cantitatea unui produs
+BEGIN
+    update stoc set cantitate = p_pretNou where produs = p_id;
+END updateCantitate;
+
+
+
+end StocProduse;
+/

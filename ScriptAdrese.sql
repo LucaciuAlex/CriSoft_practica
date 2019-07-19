@@ -1,0 +1,10 @@
+create table adresa(
+  id number(3) primary key,
+  tara varchar(40),
+  judet varchar(40),
+  localitate varchar(40),
+  strada varchar(40),
+  nrStr number(3)
+)
+
+create sequence incrementAdresa start with 1;

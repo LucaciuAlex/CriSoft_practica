@@ -1,0 +1,6 @@
+create table stoc(
+  id number(3) primary key,
+  produs number(3) references produs(id) not null,
+  cantitate number(5)
+  
+)

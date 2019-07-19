@@ -1,0 +1,12 @@
+create or replace package body Angajat is
+
+  function adauga( nume varchar2, dataAngajarii date, dataNasterii date, adresaAng number,  nrTel number, email varchar2, contAng number) return number is
+        PRAGMA AUTONOMOUS_TRANSACTION;
+  begin
+      insert into angajati values(incrementAngajati.Nextval, nume, dataAngajarii, dataNasterii, adresaAng,nrTel,email,contAng);
+      COMMIT;
+      return Incrementangajati.Currval;
+  end adauga; 
+
+end Angajat;
+/

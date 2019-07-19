@@ -1,0 +1,8 @@
+create or replace package Angajat is
+
+
+   function adauga( nume varchar2, dataAngajarii date, dataNasterii date,  adresaAng number, nrTel number, email varchar2, contAng number) return number;
+
+
+end Angajat;
+/

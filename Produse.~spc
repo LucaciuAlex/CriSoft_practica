@@ -1,0 +1,10 @@
+create or replace package Produse is
+
+
+   function adauga( nume varchar2, descriere varchar2, pret number)return number;
+   
+   procedure updatePret(idul varchar2, pretNou varchar2);
+
+
+end Produse;
+/

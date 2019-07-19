@@ -1,0 +1,8 @@
+create or replace package Inregistrari is
+
+
+   function adauga(produs number, cantitate number, pret number, factura number) return number;
+   
+
+end Inregistrari;
+/

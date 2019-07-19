@@ -1,0 +1,6 @@
+create or replace package Adrese is
+
+       function adauga(tara varchar2, judet varchar2, localitate varchar2, strada varchar2, nrStrada number) return number;
+         
+END Adrese;
+/
